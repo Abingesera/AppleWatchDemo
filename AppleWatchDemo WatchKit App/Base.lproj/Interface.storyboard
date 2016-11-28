@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--第一页-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller title="第一页" id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <table alignment="left" id="5KF-DF-2ni">
+                            <items>
+                                <tableRow identifier="DemoRow" id="HYR-3h-AVo" customClass="DemoRow">
+                                    <group key="rootItem" width="1" height="160" alignment="left" layout="vertical" id="EKp-Vo-Z1J">
+                                        <items>
+                                            <group width="1" height="16" alignment="left" layout="vertical" id="rua-BI-BGB">
+                                                <items>
+                                                    <timer width="1" height="1" alignment="left" id="cdx-KH-oLw">
+                                                        <color key="textColor" red="0.95686274510000002" green="0.4497456447" blue="0.36455005400000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </timer>
+                                                </items>
+                                                <variation key="device=watch38mm" height="14"/>
+                                            </group>
+                                            <group width="132" height="53" alignment="left" verticalAlignment="bottom" layout="vertical" id="pX6-T4-bq4">
+                                                <items>
+                                                    <label width="1" height="27" alignment="left" text="Label" numberOfLines="0" id="RRI-ti-ssU"/>
+                                                    <dateLabel alignment="left" verticalAlignment="center" id="wlu-CW-RKA">
+                                                        <color key="textColor" red="0.57922671830000005" green="0.95686274510000002" blue="0.46693012210000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <dateFormatterStyle key="dateStyle" none="YES" short="YES"/>
+                                                        <dateFormatterStyle key="timeStyle" none="YES" short="YES"/>
+                                                    </dateLabel>
+                                                </items>
+                                            </group>
+                                        </items>
+                                        <variation key="device=watch38mm" height="140"/>
+                                        <connections>
+                                            <segue destination="T3c-hJ-QPk" kind="modal" id="Mn1-lJ-hmL"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="DemoImage" destination="EKp-Vo-Z1J" id="INg-ke-QYq"/>
+                                        <outlet property="DemoTimer" destination="cdx-KH-oLw" id="LyS-7D-jfD"/>
+                                        <outlet property="TitleLabel" destination="RRI-ti-ssU" id="10g-MC-59v"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="MyTable" destination="5KF-DF-2ni" id="t0c-rC-IYt"/>
+                        <segue destination="m4Y-Dc-bDe" kind="relationship" relationship="nextPage" id="MSc-r2-ZD5"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="134" y="206"/>
+        </scene>
+        <!--第二页-->
+        <scene sceneID="3Zb-08-cYx">
+            <objects>
+                <controller identifier="second" title="第二页" id="m4Y-Dc-bDe" customClass="SecondController">
+                    <items>
+                        <table alignment="left" id="Lto-Ut-Pbl">
+                            <items>
+                                <tableRow identifier="firstRow" id="TIo-wc-TYz">
+                                    <group key="rootItem" width="1" height="59.5" alignment="left" id="0PI-gZ-wDs">
+                                        <items>
+                                            <label width="1" height="1" alignment="left" text="显示地图" textAlignment="center" id="epv-Kg-4jl">
+                                                <color key="textColor" red="0.95686274510000002" green="0.4497456447" blue="0.36455005400000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <table alignment="left" id="v8h-am-3zF">
+                            <items>
+                                <tableRow identifier="secondRow" id="iY2-WD-XYQ" customClass="SecondDemoRow">
+                                    <group key="rootItem" width="1" height="59.5" alignment="left" id="Rz6-4M-CoO">
+                                        <items>
+                                            <imageView width="52" height="44" alignment="left" verticalAlignment="center" image="01.jpg" id="nHs-Vz-xyJ"/>
+                                            <label width="70" height="37" alignment="left" verticalAlignment="center" text="Apple Watch" textAlignment="center" id="aVf-3D-HWc">
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="font" type="italicSystem" pointSize="10"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="DemoImage" destination="nHs-Vz-xyJ" id="6wm-1z-Vgu"/>
+                                        <outlet property="DemoLabel" destination="aVf-3D-HWc" id="Ylo-UW-qiw"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="FirstTable" destination="Lto-Ut-Pbl" id="enf-2M-zV9"/>
+                        <outlet property="SecondTable" destination="v8h-am-3zF" id="Kef-lV-Nsz"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="336" y="206"/>
+        </scene>
+        <!--上海-->
+        <scene sceneID="gy7-OL-OjN">
+            <objects>
+                <controller identifier="third" title="上海" id="MKC-7m-Ns3" customClass="ThirdController">
+                    <items>
+                        <map width="1" height="1" alignment="left" id="upX-fT-Yqt"/>
+                    </items>
+                    <connections>
+                        <outlet property="MyMap" destination="upX-fT-Yqt" id="9ou-oB-X2b"/>
+                        <segue destination="ti9-Jo-54E" kind="relationship" relationship="nextPage" id="g3y-Zc-Qj8"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="537" y="206"/>
+        </scene>
+        <!--北京-->
+        <scene sceneID="vdP-OC-XZI">
+            <objects>
+                <controller identifier="forth" title="北京" id="ti9-Jo-54E" customClass="ForthController">
+                    <items>
+                        <map width="1" height="1" alignment="left" id="Wqb-fw-vhz"/>
+                    </items>
+                    <connections>
+                        <outlet property="MyMap" destination="Wqb-fw-vhz" id="7Yv-W5-ds6"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="532" y="522"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="mEr-iR-7vz">
+            <objects>
+                <controller identifier="datail" title="Detail" id="T3c-hJ-QPk" customClass="WKDemoDetailController">
+                    <items>
+                        <label width="1" alignment="left" text="Label" id="Hld-gY-ZTz">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <group width="1" height="100" alignment="left" contentMode="scaleAspectFill" id="e8t-4H-AcT">
+                            <variation key="device=watch38mm" height="110"/>
+                            <variation key="device=watch42mm" height="130"/>
+                        </group>
+                        <group width="1" alignment="left" layout="vertical" id="vj2-H3-Xsy">
+                            <items>
+                                <label width="1" alignment="left" text="Label" numberOfLines="0" id="UBH-SJ-tm7"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="DetailLabel" destination="UBH-SJ-tm7" id="uvB-vM-5eh"/>
+                        <outlet property="GroupImage" destination="e8t-4H-AcT" id="Hl9-RJ-4ye"/>
+                        <outlet property="TitleLabel" destination="Hld-gY-ZTz" id="nqb-aU-BQP"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="134" y="526"/>
+        </scene>
+        <!--Apple Watch 图片-->
+        <scene sceneID="SfI-6p-wbk">
+            <objects>
+                <controller identifier="animation" title="Apple Watch 图片" id="tFm-72-bks" customClass="AnimationController">
+                    <items>
+                        <imageView width="122" height="120" alignment="center" verticalAlignment="center" id="LGH-QC-Tpg"/>
+                    </items>
+                    <connections>
+                        <outlet property="MyImage" destination="LGH-QC-Tpg" id="ayh-xc-36u"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="134" y="783"/>
+        </scene>
+    </scenes>
+</document>
